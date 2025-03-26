@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: migration-service
+spec:
+  selector:
+    app: migration-test
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: 80
+
